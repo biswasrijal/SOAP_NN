@@ -4,6 +4,15 @@ from pymatgen.core.structure import Structure,Composition
 import ase
 import os
 
+
+__author__ = "Biswas Rijal"
+__copyright__ = "Copyright 2024"
+__maintainer__ = "Biswas Rijal"
+__email__ = "biswas.rijal@gmail.com"
+__status__ = "Production"
+__date__ = "November 3, 2024"
+
+
 def descriptors(poscar_filename):
     strc = Structure.from_file(poscar_filename) 
     atoms = read(poscar_filename)
