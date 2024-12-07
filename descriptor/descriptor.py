@@ -3,7 +3,7 @@ from ase.io import read
 from pymatgen.core.structure import Structure,Composition
 import ase
 import os
-
+import numpy as np
 
 __author__ = "Biswas Rijal"
 __copyright__ = "Copyright 2024"
@@ -84,3 +84,11 @@ def add_element(filename,compound):
         w.close()
     f.close()
     os.system('rm {}'.format(filename))
+
+def energies(cfg):
+    energies = np.zeros(len(cfg))
+    for i in range(1,len(cfg)+1):
+        energies[i-1]=cfg.loc[i,'Energy'][0]
+        
+    return energies
+    
