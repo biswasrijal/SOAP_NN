@@ -16,6 +16,18 @@ def descriptors(poscar_filename):
 
     return descrip
 
+def average_descriptor(poscar_filename):
+    strc = Structure.from_file(poscar_filename)
+    atoms = read(poscar_filename)
+    species = [strc.symbol_set[0],strc.symbol_set[1]]
+    r_cut = 6.0
+    n_max = 8
+    l_max = 6
+
+    avg_soap = SOAP(species=species,r_cut=r_cut,n_max=n_max,l_max=l_max,periodic=True,average='inner',sparse=False)
+    descrip = avg_soap.create(atoms)
+    return descrip
+
 def species(POSCAR):
     strc = Structure.from_file(POSCAR)
     species = [strc.symbol_set[0],strc.symbol_set[1]]
