@@ -1,1 +1,1 @@
-has model
+1 hidden layer neural network

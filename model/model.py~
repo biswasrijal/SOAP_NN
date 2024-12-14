@@ -1,0 +1,14 @@
+import numpy as np
+import torch
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+
+
+#Loading dataset
+
+def load_descriptor(filename):
+    descriptors = np.load(filename)
+    return descriptors
+
+n_samples = descritors
+
